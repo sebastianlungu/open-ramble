@@ -1,6 +1,6 @@
 {
   "name": "open-ramble",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Zero-friction multimodal intent compiler for coding agents",
   "license": "MIT",
