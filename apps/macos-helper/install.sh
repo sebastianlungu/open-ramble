@@ -114,6 +114,11 @@ reset_screen_recording_if_identity_changed() {
 
 ensure_signing_identity
 
+if [ "$APP" != "/Applications/Open-Ramble.app" ]; then
+  echo "Error: APP guard failed" >&2
+  exit 1
+fi
+
 if [ ! -d "$APP" ]; then
   echo "App bundle not found: $APP" >&2
   exit 1
@@ -151,14 +156,21 @@ echo "Stamping repo root: $REPO_ROOT"
 /usr/libexec/PlistBuddy -c "Set :OpenRambleRepoRoot $REPO_ROOT" "$APP/Contents/Info.plist" 2>/dev/null || \
   /usr/libexec/PlistBuddy -c "Add :OpenRambleRepoRoot string $REPO_ROOT" "$APP/Contents/Info.plist"
 
+echo "Cleaning previous signature and stale artifacts..."
+rm -rf "$APP/Contents/_CodeSignature"
+find "$APP/Contents" -name "*.cstemp" -delete
+
 echo "Signing with stable identity: $SIGN_IDENTITY..."
 codesign --force --sign "$SIGN_IDENTITY" \
   --identifier "$BUNDLE_ID" \
   "$APP"
 
-# Verify signature
 echo "Verifying signature..."
-codesign --verify --verbose "$APP" && echo "Signature valid."
+if ! codesign --verify --strict --verbose=4 "$APP"; then
+  echo "Error: signature verification failed for $APP" >&2
+  exit 1
+fi
+echo "Signature valid."
 
 echo ""
 echo "Done. Run: open -a Open-Ramble"
