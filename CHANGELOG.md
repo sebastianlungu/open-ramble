@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/sebastianlungu/openramble/compare/v1.0.0...v1.0.1) (2026-07-29)
+
+
+### Bug Fixes
+
+* **macos-helper:** recover interrupted signing ([#20](https://github.com/sebastianlungu/openramble/issues/20)) ([fb185e3](https://github.com/sebastianlungu/openramble/commit/fb185e3912570387feb2893044ac55e889ef8110))
+
 ## 1.0.0 (2026-07-14)
 
 
