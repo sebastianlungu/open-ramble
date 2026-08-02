@@ -1,0 +1,82 @@
+{
+  "$schema": "./compatibility-manifest.schema.json",
+  "title": "Open-Ramble Portable Runtime Compatibility Unit",
+  "version": "1.0.0",
+  "pinned": "2026-07-29T16:00:00Z",
+  "verifiedBy": [
+    "sha256 checksum",
+    "binary version probe",
+    "npm registry integrity"
+  ],
+  "components": [
+    {
+      "name": "opencode-cli",
+      "role": "coding agent server",
+      "version": "1.18.9",
+      "commit": "4da7bb44c84e013fa53e9c5d02ac753d1435c81a",
+      "source": {
+        "repository": "https://github.com/anomalyco/opencode",
+        "tag": "v1.18.9",
+        "commitUrl": "https://github.com/anomalyco/opencode/tree/4da7bb44c84e013fa53e9c5d02ac753d1435c81a",
+        "releaseUrl": "https://github.com/anomalyco/opencode/releases/tag/v1.18.9"
+      },
+      "provenance": "GitHub Release (anomalyco/opencode v1.18.9)",
+      "license": "MIT",
+      "licenseUrl": "https://raw.githubusercontent.com/anomalyco/opencode/v1.18.9/LICENSE",
+      "platforms": {
+        "darwin-arm64": {
+          "ghReleaseAsset": "opencode-darwin-arm64.zip",
+          "downloadUrl": "https://github.com/anomalyco/opencode/releases/download/v1.18.9/opencode-darwin-arm64.zip",
+          "zipSha256": "6f998b7dabb9425bb348fd0d88afeb92a14422771231cec9b0f4374b947397e6",
+          "binarySha256": "2348bf6751a04498090b2a301afcae4ff55785e0502ba76a42acba6617f3a7ea",
+          "arch": "arm64",
+          "os": "darwin",
+          "zipSize": 47190199,
+          "binarySize": 138509666
+        },
+        "darwin-x64": {
+          "ghReleaseAsset": "opencode-darwin-x64.zip",
+          "downloadUrl": "https://github.com/anomalyco/opencode/releases/download/v1.18.9/opencode-darwin-x64.zip",
+          "zipSha256": "b9e6081f4db1f2066910f121258c23c8243438d22b1b80987d1569c5e40ef00e",
+          "binarySha256": "c0fca8fd0a455406ee6c3c5908423ace80a73c22b024006d4f0490014b3f3b93",
+          "arch": "x64",
+          "os": "darwin",
+          "zipSize": 47190199,
+          "binarySize": 144031824
+        }
+      }
+    },
+    {
+      "name": "@opencode-ai/sdk",
+      "role": "TypeScript SDK for OpenCode API client",
+      "version": "1.18.9",
+      "provenance": "npm registry (@opencode-ai/sdk@1.18.9)",
+      "license": "MIT",
+      "downloadUrl": "https://registry.npmjs.org/@opencode-ai/sdk/-/sdk-1.18.9.tgz",
+      "integrity": "sha512-oDJSmsmiGW+3lNLmZYj3EpUkpiT3ITZBKffH3mrmu2KMJXlkxQ/Nvv7jqPffSM7o8lCdBZS/aCE+2GkA3/92gQ==",
+      "shasum": "d5e6aaba7f9583c70bf1902e135b54626d20bbb7"
+    },
+    {
+      "name": "bun",
+      "role": "JavaScript runtime and package manager",
+      "version": "1.3.11",
+      "provenance": "GitHub Release (oven-sh/bun bun-v1.3.11)",
+      "license": "MIT with additional notices",
+      "licenseUrl": "https://raw.githubusercontent.com/oven-sh/bun/bun-v1.3.11/LICENSE.md",
+      "platforms": {
+        "darwin-arm64": {
+          "downloadUrl": "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-darwin-aarch64.zip",
+          "zipSha256": "6f5a3467ed9caec4795bf78cd476507d9f870c7d57b86c945fcb338126772ffc",
+          "arch": "arm64",
+          "os": "darwin"
+        },
+        "darwin-x64": {
+          "downloadUrl": "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-darwin-x64.zip",
+          "zipSha256": "c4fe2b9247218b0295f24e895aaec8fee62e74452679a9026b67eacbd611a286",
+          "arch": "x64",
+          "os": "darwin"
+        }
+      }
+    }
+  ]
+}

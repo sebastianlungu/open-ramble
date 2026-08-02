@@ -9,7 +9,7 @@
     "open-ramble": "./src/index.ts"
   },
   "dependencies": {
-    "@opencode-ai/sdk": "^1.16.2"
+    "@opencode-ai/sdk": "1.18.9"
   },
   "scripts": {
     "open-ramble": "bun run src/index.ts",
@@ -19,6 +19,10 @@
     "typecheck": "bunx tsc --noEmit",
     "check": "bun run lint && bun run typecheck && bun run test",
     "proof": "bun run src/opencode-bridge/proof.ts",
+    "proof:runtime": "bun test runtime-proof/tests/runtime-proof.test.ts",
+    "proof:oauth": "bun run runtime-proof/tests/oauth-proof.ts",
+    "proof:x64": "bash runtime-proof/tests/x86-verify.sh",
+    "proof:compiler": "bash runtime-proof/tests/standalone-compiler-proof.sh",
     "start": "bun run src/index.ts",
     "prepare": "lefthook install"
   },

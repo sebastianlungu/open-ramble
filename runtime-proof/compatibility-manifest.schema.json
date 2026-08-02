@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Open-Ramble Runtime Compatibility Manifest Schema",
+  "type": "object",
+  "required": ["title", "version", "pinned", "components"],
+  "properties": {
+    "title": { "type": "string" },
+    "version": { "type": "string" },
+    "pinned": { "type": "string", "format": "date-time" },
+    "verifiedBy": { "type": "array", "items": { "type": "string" } },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "version", "provenance", "license"],
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "version": { "type": "string" },
+          "npmPackage": { "type": "string" },
+          "provenance": { "type": "string" },
+          "license": { "type": "string" },
+          "downloadUrl": { "type": "string", "format": "uri" },
+          "integrity": { "type": "string" },
+          "shasum": { "type": "string" },
+          "platforms": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["downloadUrl", "arch", "os"],
+              "properties": {
+                "npmPackage": { "type": "string" },
+                "downloadUrl": { "type": "string", "format": "uri" },
+                "tgzSha256": { "type": "string" },
+                "zipSha256": { "type": "string" },
+                "binarySha256": { "type": "string" },
+                "arch": { "type": "string" },
+                "os": { "type": "string" },
+                "zipSize": { "type": "integer" },
+                "binarySize": { "type": "integer" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "compatibilityNotes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
